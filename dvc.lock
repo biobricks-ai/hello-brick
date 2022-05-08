@@ -1,0 +1,8 @@
+schema: '2.0'
+stages:
+  hello:
+    cmd: echo 'hello world' > data/hello.txt
+    outs:
+    - path: data/hello.txt
+      md5: 6f5902ac237024bdd0c176cb93063dc4
+      size: 12
