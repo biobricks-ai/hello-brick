@@ -1,0 +1,5 @@
+Brick: hello-brick
+Title: a brick for testing
+Version: 1.0 
+Schema:
+  - file: hello.txt

@@ -1,0 +1,5 @@
+stages:
+  hello:
+    cmd: echo 'hello world' > data/hello.txt
+    outs:
+    - data/hello.txt
