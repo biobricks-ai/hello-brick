@@ -6,3 +6,14 @@ stages:
     - path: data/hello.txt
       md5: 6f5902ac237024bdd0c176cb93063dc4
       size: 12
+  mtcars:
+    cmd: Rscript R/mtcars.R
+    deps:
+    - path: R/mtcars.R
+      md5: d8a066f6503a69a2f71ca28e2843ee00
+      size: 126
+    outs:
+    - path: data/
+      md5: 145c0aee66b09e29ed9c5204a7abd1c7.dir
+      size: 6234
+      nfiles: 1

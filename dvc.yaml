@@ -1,5 +1,7 @@
 stages:
-  hello:
-    cmd: echo 'hello world' > data/hello.txt
+  mtcars:
+    cmd: Rscript R/mtcars.R
+    deps:
+      - R/mtcars.R
     outs:
-    - data/hello.txt
+      - data/
