@@ -14,6 +14,6 @@ stages:
       size: 126
     outs:
     - path: data/
-      md5: 145c0aee66b09e29ed9c5204a7abd1c7.dir
+      md5: df3ba85a2b0698cb93c153546183548c.dir
       size: 6234
       nfiles: 1
