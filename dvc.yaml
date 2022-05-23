@@ -9,3 +9,7 @@ stages:
     cmd: Rscript R/build_iris_sqlite.R
     outs:
       - data/iris.sqlite
+  nested_tbls:
+    cmd: Rscript R/build_nested_namespace.R
+    outs:
+      - data/rtbls/
