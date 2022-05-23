@@ -4,4 +4,8 @@ stages:
     deps:
       - R/mtcars.R
     outs:
-      - data/
+      - data/mtcars.parquet
+  iris_sqlite:
+    cmd: Rscript R/build_iris_sqlite.R
+    outs:
+      - data/iris.sqlite

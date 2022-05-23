@@ -10,10 +10,15 @@ stages:
     cmd: Rscript R/mtcars.R
     deps:
     - path: R/mtcars.R
-      md5: d8a066f6503a69a2f71ca28e2843ee00
-      size: 126
+      md5: 7a80d0296493b05d4d84cc12ec94e20f
+      size: 124
     outs:
-    - path: data/
-      md5: df3ba85a2b0698cb93c153546183548c.dir
+    - path: data/mtcars.parquet
+      md5: cc1ba147effafe2e0aa844f598a7c30d
       size: 6234
-      nfiles: 1
+  iris_sqlite:
+    cmd: Rscript R/build_iris_sqlite.R
+    outs:
+    - path: data/iris.sqlite
+      md5: 919a165fe605e7084168aafe3542c099
+      size: 16384

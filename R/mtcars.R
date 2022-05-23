@@ -1,5 +1,5 @@
+library(fs)
 library(arrow)
 
-data_dir <- "data"
-fs::dir_create(data_dir)
-arrow::write_parquet(mtcars,file.path(data_dir,"mtcars.parquet"))
+path <- fs::dir_create("data") |> fs::path("mtcars.parquet") 
+arrow::write_parquet(mtcars,path)
