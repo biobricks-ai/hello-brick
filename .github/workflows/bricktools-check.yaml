@@ -1,7 +1,7 @@
 name: bricktools-check
 on: [push]
 jobs:
-  covr:
+  bricktools-check:
     runs-on: ubuntu-latest
     steps:
       - run: echo "trigger event - ${{ github.event_name }}."
@@ -12,10 +12,10 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
         with:
           use-public-rspm: true
-      - uses: r-lib/actions/setup-r-dependencies@v1
-        with:
-          extra-packages: |
-            devtools
+      - name: install devtools
+        run: |
+          install.packages("devtools")
+        shell: Rscript {0}
       - name: install bricktools
         run: |
           devtools::install_github("biobricks-ai/bricktools")
