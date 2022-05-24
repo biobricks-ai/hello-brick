@@ -1,11 +1,11 @@
 schema: '2.0'
 stages:
-  hello:
-    cmd: echo 'hello world' > data/hello.txt
+  iris_sqlite:
+    cmd: Rscript R/build_iris_sqlite.R
     outs:
-    - path: data/hello.txt
-      md5: 6f5902ac237024bdd0c176cb93063dc4
-      size: 12
+    - path: data/iris.sqlite
+      md5: 919a165fe605e7084168aafe3542c099
+      size: 16384
   mtcars:
     cmd: Rscript R/mtcars.R
     deps:
@@ -16,12 +16,6 @@ stages:
     - path: data/mtcars.parquet
       md5: cc1ba147effafe2e0aa844f598a7c30d
       size: 6234
-  iris_sqlite:
-    cmd: Rscript R/build_iris_sqlite.R
-    outs:
-    - path: data/iris.sqlite
-      md5: 919a165fe605e7084168aafe3542c099
-      size: 16384
   nested_tbls:
     cmd: Rscript R/build_nested_namespace.R
     outs:
