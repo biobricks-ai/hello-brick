@@ -3,6 +3,8 @@ on: [push]
 jobs:
   bricktools-check:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - run: echo "trigger event - ${{ github.event_name }}."
       - run: echo "running os is - ${{ runner.os }}"
