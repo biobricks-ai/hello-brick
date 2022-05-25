@@ -14,6 +14,14 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
         with:
           use-public-rspm: true
+      - name: Install dvc
+        run: |
+          sudo wget \
+            https://dvc.org/deb/dvc.list \
+            -O /etc/apt/sources.list.d/dvc.list
+          wget -qO - https://dvc.org/deb/iterative.asc | sudo apt-key add -
+          sudo apt update
+          sudo apt install dvc
       - name: install devtools
         run: |
           install.packages("devtools")
