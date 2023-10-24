@@ -4,12 +4,12 @@ stages:
     deps:
       - R/mtcars.R
     outs:
-      - data/mtcars.parquet
+      - brick/mtcars.parquet
   iris_sqlite:
     cmd: Rscript R/build_iris_sqlite.R
     outs:
-      - data/iris.sqlite
+      - brick/iris.sqlite
   nested_tbls:
     cmd: Rscript R/build_nested_namespace.R
     outs:
-      - data/rtbls/
+      - brick/rtbls/

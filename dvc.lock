@@ -3,23 +3,27 @@ stages:
   iris_sqlite:
     cmd: Rscript R/build_iris_sqlite.R
     outs:
-    - path: data/iris.sqlite
-      md5: 919a165fe605e7084168aafe3542c099
+    - path: brick/iris.sqlite
+      hash: md5
+      md5: 67e57780114cb33ad11358ff0ec81e18
       size: 16384
   mtcars:
     cmd: Rscript R/mtcars.R
     deps:
     - path: R/mtcars.R
-      md5: 7a80d0296493b05d4d84cc12ec94e20f
-      size: 124
+      hash: md5
+      md5: 3b883c1de7f2f394e7cec4ea0ea4adee
+      size: 125
     outs:
-    - path: data/mtcars.parquet
-      md5: cc1ba147effafe2e0aa844f598a7c30d
-      size: 6234
+    - path: brick/mtcars.parquet
+      hash: md5
+      md5: 0aaee11459857cc8810d8c9cd67a404a
+      size: 6033
   nested_tbls:
     cmd: Rscript R/build_nested_namespace.R
     outs:
-    - path: data/rtbls/
-      md5: a0038a50e44a720cd151365e5877bf48.dir
-      size: 10263
+    - path: brick/rtbls/
+      hash: md5
+      md5: 3f8beb141d6fc1ada491afa182d4b9e9.dir
+      size: 9861
       nfiles: 2
