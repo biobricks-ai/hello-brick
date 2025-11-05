@@ -1,5 +1,56 @@
-Brick: hello-brick
-Title: a brick for testing
-Version: 1.0 
-Schema:
-  - file: hello.txt
+brick: hello-brick
+version: v1.0.0
+description: Brick used for testing purposes
+assets:
+  mtcars.parquet:
+    description: The `mtcars` asset contains 11 columns of automotive performance data, including fuel efficiency (mpg), engine specifications (cyl, disp, hp), and transmission details (am, gear). This data is suitable for analyzing relationships between vehicle characteristics and performance metrics.
+    schema: |
+      [
+        {column_name: mpg, logical: DOUBLE, physical: DOUBLE},
+        {column_name: cyl, logical: DOUBLE, physical: DOUBLE},
+        {column_name: disp, logical: DOUBLE, physical: DOUBLE},
+        {column_name: hp, logical: DOUBLE, physical: DOUBLE},
+        {column_name: drat, logical: DOUBLE, physical: DOUBLE},
+        {column_name: wt, logical: DOUBLE, physical: DOUBLE},
+        {column_name: qsec, logical: DOUBLE, physical: DOUBLE},
+        {column_name: vs, logical: DOUBLE, physical: DOUBLE},
+        {column_name: am, logical: DOUBLE, physical: DOUBLE},
+        {column_name: gear, logical: DOUBLE, physical: DOUBLE},
+        {column_name: carb, logical: DOUBLE, physical: DOUBLE}
+      ]
+  rtbls/iris.parquet:
+    description: This asset contains a sample of the Iris flower dataset, including measurements of sepal and petal dimensions along with the species classification. It serves as a foundational dataset for basic classification and machine learning tasks.
+    schema: |
+      [
+        {column_name: Sepal.Length, logical: DOUBLE, physical: DOUBLE},
+        {column_name: Sepal.Width, logical: DOUBLE, physical: DOUBLE},
+        {column_name: Petal.Length, logical: DOUBLE, physical: DOUBLE},
+        {column_name: Petal.Width, logical: DOUBLE, physical: DOUBLE},
+        {column_name: Species, logical: VARCHAR, physical: BYTE_ARRAY}
+      ]
+  rtbls/mtcars.parquet:
+    description: This asset contains a subset of the mtcars dataset, featuring 11 columns of automotive performance metrics. It is derived from the hello-brick dataset, which focuses on bacterial genomic sequences and metadata.
+    schema: |
+      [
+        {column_name: mpg, logical: DOUBLE, physical: DOUBLE},
+        {column_name: cyl, logical: DOUBLE, physical: DOUBLE},
+        {column_name: disp, logical: DOUBLE, physical: DOUBLE},
+        {column_name: hp, logical: DOUBLE, physical: DOUBLE},
+        {column_name: drat, logical: DOUBLE, physical: DOUBLE},
+        {column_name: wt, logical: DOUBLE, physical: DOUBLE},
+        {column_name: qsec, logical: DOUBLE, physical: DOUBLE},
+        {column_name: vs, logical: DOUBLE, physical: DOUBLE},
+        {column_name: am, logical: DOUBLE, physical: DOUBLE},
+        {column_name: gear, logical: DOUBLE, physical: DOUBLE},
+        {column_name: carb, logical: DOUBLE, physical: DOUBLE}
+      ]
+  iris.sqlite:
+    description: This asset contains a subset of the mtcars dataset, featuring 11 columns of automotive performance metrics. It is derived from the hello-brick dataset, which focuses on bacterial genomic sequences and metadata.
+    schema: |
+      CREATE TABLE `iris` (
+        `Sepal.Length` REAL,
+        `Sepal.Width` REAL,
+        `Petal.Length` REAL,
+        `Petal.Width` REAL,
+        `Species` TEXT
+      );
