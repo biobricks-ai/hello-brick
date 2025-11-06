@@ -1,10 +1,8 @@
-name: Validate Metadata
+name: metadata-check
 on: [push, workflow_dispatch]
 jobs:
   validate-metadata:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: metadata validation
-        uses: biobricks-ai/github-actions/metadata-check@main
+        uses: biobricks-ai/github-actions/metadata-check@latest
