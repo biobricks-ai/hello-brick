@@ -7,4 +7,4 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: bricktools check
-        uses: biobricks-ai/github-actions/bricktools-check@v0.0.1
+        uses: biobricks-ai/github-actions/bricktools-check@main
