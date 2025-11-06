@@ -4,5 +4,8 @@ jobs:
   validate-metadata:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
       - name: metadata validation
         uses: biobricks-ai/github-actions/metadata-check@latest
